@@ -20,6 +20,15 @@
         <td th:utext="${user.getEmail}">email</td>
     </tr>
 </table>
+<br/>
 <a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
+<br/>
+<form th:method="DELETE" th:action="@{/users/{id} (id=${user.getId()})}">
+    <button th:id="button11" type="submit">
+        <i>delete</i>
+    </button>
+</form>
+<br/>
+<a th:href="@{/users}">to UserList</a>
 </body>
 </html>

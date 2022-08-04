@@ -66,6 +66,11 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
+    public void delete(long id) {
+        userList.removeIf(user -> user.getId()==id);
+    }
+
+    @Override
     @SuppressWarnings("unchecked")
     public List<User> listUsers() {
         return userList;

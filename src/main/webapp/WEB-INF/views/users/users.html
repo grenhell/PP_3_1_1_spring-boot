@@ -13,17 +13,25 @@
         <th>firstname</th>
         <th>lastname</th>
         <th>email</th>
-        <th></th>
-        <th></th>
+        <th>cards</th>
     </tr>
     <tr th:each="user, state : ${userlist}">
         <td th:utext="${user.getId}">id</td>
         <td th:utext="${user.getFirstName}">firstname</td>
         <td th:utext="${user.getLastName}">lastname</td>
         <td th:utext="${user.getEmail}">email</td>
-        <td th:href="@{/users/{id}/read(id=${user.getId()})}">toCard</td>
+
+        <td>
+            <form th:method="GET" th:action="@{/users/{id} (id=${user.getId()})}">
+                <button th:id="button10" type="submit">
+                    <i>to Card</i>
+                </button>
+            </form>
+        </td>
     </tr>
 </table>
+<br/>
+<a th:href="@{/users/new}">add</a>
 
 </body>
 </html>
