@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Card</title>
+</head>
+<body>
+<h1>User Card</h1>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>email</th>
+    </tr>
+    <tr>
+        <td th:utext="${user.getId}">id</td>
+        <td th:utext="${user.getFirstName}">firstname</td>
+        <td th:utext="${user.getLastName}">lastname</td>
+        <td th:utext="${user.getEmail}">email</td>
+    </tr>
+</table>
+<a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
+</body>
+</html>

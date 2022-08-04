@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Userlist</title>
+    <style>table th, table td {padding: 5px;}</style>
+</head>
+<body>
+<h1>Userlist</h1>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>email</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr th:each="user, state : ${userlist}">
+        <td th:utext="${user.getId}">id</td>
+        <td th:utext="${user.getFirstName}">firstname</td>
+        <td th:utext="${user.getLastName}">lastname</td>
+        <td th:utext="${user.getEmail}">email</td>
+        <td th:href="@{/users/{id}/read(id=${user.getId()})}">toCard</td>
+    </tr>
+</table>
+
+</body>
+</html>
+</html>
